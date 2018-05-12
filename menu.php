@@ -37,12 +37,12 @@ if (false) // тут проверка на наличие авторизации
 	<body>
 		<a class="menu" href="zapchasti.php">Просмотр прайс-листа "Запчасти"</a>
 		<a class="menu" href="|">Просмотр прайс-листа "Услуги"</a>
-		<a class="menu" href="|">Кадры</a>
-		<a class="menu" href="|">1</a>
-		<a class="menu" href="|">2</a>
-		<a class="menu" href="|">3</a>
-		<a class="menu" href="|">4</a>
-		<a class="menu" href="|">5</a>
+		<a class="menu" href="|">Просмотр, редактирование списка сотрудников</a>
+		<a class="menu" href="|">Поступление автомобиля на ремонт</a>
+		<a class="menu" href="|">Ремонт автомобиля</a>
+		<a class="menu" href="|">Отчет о выписке счетов</a>
+		<a class="menu" href="|">Отчет о проделанной работе</a>
+		<a class="menu" href="|">Отчет о периоде времени</a>
 		<a class="exit" href="index.php">Выход</a>
 	</body>
 </html>

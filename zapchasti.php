@@ -10,6 +10,14 @@
 			zapchast {
 				display: table-row;
 			}
+			zapchasti > form {
+				display: table-row;
+			}
+			zapchasti > form > input {
+				display: table-cell;
+				padding: 10px;
+				border: 1px solid darkblue;
+			}
 			zapchast > * {
 				display: table-cell;
 				padding: 10px;
@@ -31,22 +39,42 @@ class MyDB extends SQLite3
 $db = new MyDB();
 
 $result = $db->query('SELECT * FROM zapchasti');
-echo "<zapchasti>\n";
-echo "<zapchast>\n";
-echo "<id>1</id>\n";
-echo "<name>2</name>\n";
-echo "<number>3</number>\n";
-echo "<price>4</price>\n";
-echo "</zapchast>\n";
+echo "<form action='edit_zch.php' method='post'>\n";
+echo "<input name='id'     
+             placeholder='№' />\n";
+echo "<input name='name'   
+			 placeholder='Наименование' />\n";
+echo "<input name='number' 
+             placeholder='Число' />\n";
+echo "<input name='price'  
+             placeholder='Цена' />\n";
+echo "<input name='new'
+			 value='Создать'
+			 type='submit' />\n";
+echo "</form>\n";
 
 while ($row = $result->fetchArray())
 {
-	echo "<zapchast>\n";
-	echo "<id>".$row['id']."</id>\n";
-	echo "<name>".$row['name']."</name>\n";
-	echo "<number>".$row['number']."</number>\n";
-	echo "<price>".$row['price']."</price>\n";
-	echo "</zapchast>\n";
+	echo "<form action='edit_zch.php' method='post'>\n";
+	echo "<input name='id'     
+	             value='".$row['id']."'
+	             placeholder='id' />\n";
+	echo "<input name='name'   
+				 value='".$row['name']."'   
+				 placeholder='id' />\n";
+	echo "<input name='number' 
+	             value='".$row['number']."' 
+	             placeholder='id' />\n";
+	echo "<input name='price'  
+	             value='".$row['price']."'  
+	             placeholder='id' />\n";
+	echo "<input name='delete'
+				 value='Удалить'
+				 type='submit' />\n";
+	echo "<input name='edit'
+				 value='Изменить'
+				 type='submit' />\n";
+	echo "</form>\n";
 }
 echo "</zapchasti>\n";
 

@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Автосервис : Прайс-лист запчастей</title>
+		<style>
+			zapchasti {
+				display: table;
+			}
+			zapchast {
+				display: table-row;
+			}
+			zapchast > * {
+				display: table-cell;
+				padding: 10px;
+				border: 1px solid darkblue;
+			}
+			
+		</style>
+	</head>
+	<body>
 <?php
 class MyDB extends SQLite3
 {
@@ -10,8 +31,25 @@ class MyDB extends SQLite3
 $db = new MyDB();
 
 $result = $db->query('SELECT * FROM zapchasti');
-var_dump($result->fetchArray());
+echo "<zapchasti>\n";
+echo "<zapchast>\n";
+echo "<id>1</id>\n";
+echo "<name>2</name>\n";
+echo "<number>3</number>\n";
+echo "<price>4</price>\n";
+echo "</zapchast>\n";
+
+while ($row = $result->fetchArray())
+{
+	echo "<zapchast>\n";
+	echo "<id>".$row['id']."</id>\n";
+	echo "<name>".$row['name']."</name>\n";
+	echo "<number>".$row['number']."</number>\n";
+	echo "<price>".$row['price']."</price>\n";
+	echo "</zapchast>\n";
+}
+echo "</zapchasti>\n";
 
 ?>
-
-
+	</body>
+</html>

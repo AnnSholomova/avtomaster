@@ -1,5 +1,5 @@
 <?php
-if (false) 
+if (false) // тут проверка на наличие авторизации
 {
 	header("Location: index.php");
 	die();
@@ -35,7 +35,7 @@ if (false)
 		</style>
 	</head>
 	<body>
-		<a class="menu" href="|">Просмотр прайс-листа "Запчасти"</a>
+		<a class="menu" href="zapchasti.php">Просмотр прайс-листа "Запчасти"</a>
 		<a class="menu" href="|">Просмотр прайс-листа "Услуги"</a>
 		<a class="menu" href="|">Кадры</a>
 		<a class="menu" href="|">1</a>

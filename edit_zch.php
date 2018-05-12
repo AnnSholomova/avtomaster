@@ -19,7 +19,7 @@ if(true) // Вошел в систему и имеет право редакти
 	if (isset($_POST['delete'])) 
 	{
 		echo "Удалить";
-		$st=$db->prepare('delete from zapchasti where id = :id');
+		$st=$db->prepare('delete from zapchasti where rowid = :id');
 		$st->bindParam(':id', $id, SQLITE3_INTEGER);
 		$st->execute();
 	}
@@ -29,7 +29,9 @@ if(true) // Вошел в систему и имеет право редакти
 		$st=$db->prepare('update zapchasti set 
 							name = :name, 
 							number = :number,
-							price = :price');
+							price = :price
+						  where rowid = :id;');
+		$st->bindParam(':id',     $id,     SQLITE3_INTEGER);
 		$st->bindParam(':name',   $name,   SQLITE3_TEXT);
 		$st->bindParam(':number', $number, SQLITE3_INTEGER);
 		$st->bindParam(':price',  $price,  SQLITE3_INTEGER);
@@ -39,10 +41,9 @@ if(true) // Вошел в систему и имеет право редакти
 	{
 		echo "Создать";
 		$st=$db->prepare('insert into zapchasti 
-			(id, name, number, price)
+			(name, number, price)
 			values
-			(:id, :name, :number, :price);');
-		$st->bindParam(':id',     $id,     SQLITE3_INTEGER);
+			(:name, :number, :price);');
 		$st->bindParam(':name',   $name,   SQLITE3_TEXT);
 		$st->bindParam(':number', $number, SQLITE3_INTEGER);
 		$st->bindParam(':price',  $price,  SQLITE3_INTEGER);

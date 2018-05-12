@@ -12,21 +12,20 @@ $db = new MyDB();
 $db->exec('drop table if exists zapchasti;');
 $db->exec('create table zapchasti 
 			(
-				id int, 
 				name varchar, 
 				number int, 
 				price int
 			);');
 					
 $db->exec("insert into zapchasti 
-			(id, name, number, price)
+			(name, number, price)
 			values
-			(1, 'запчасть1', 10, 10);");
+			('запчасть1', 10, 10);");
 
 $db->exec("insert into zapchasti 
-			(id, name, number, price)
+			(name, number, price)
    				values
-			(2, 'запчасть2', 20, 20);");
+			('запчасть2', 20, 20);");
  
  
  

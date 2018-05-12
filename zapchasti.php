@@ -38,7 +38,9 @@ class MyDB extends SQLite3
 
 $db = new MyDB();
 
-$result = $db->query('SELECT * FROM zapchasti');
+$result = $db->query('SELECT rowid, name, number, price 
+                      FROM zapchasti 
+                      ORDER BY name');
 echo "<form action='edit_zch.php' method='post'>\n";
 echo "<input name='id'     
              placeholder='№' />\n";
@@ -57,7 +59,7 @@ while ($row = $result->fetchArray())
 {
 	echo "<form action='edit_zch.php' method='post'>\n";
 	echo "<input name='id'     
-	             value='".$row['id']."'
+	             value='".$row['rowid']."'
 	             placeholder='id' />\n";
 	echo "<input name='name'   
 				 value='".$row['name']."'   

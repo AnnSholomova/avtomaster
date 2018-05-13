@@ -56,17 +56,13 @@ while ($row = $result->fetchArray())
 {
 	echo "<form action='edit_usl.php' method='post'>\n";
 	echo "<input name='id'     
-	             value='".$row['rowid']."'
-	             placeholder='id' />\n";
+	             value='".$row['rowid']."' />\n";
 	echo "<input name='name'   
-				 value='".$row['name']."'   
-				 placeholder='id' />\n";
+				 value='".$row['name']."' />\n";
 	echo "<input name='price_car' 
-	             value='".$row['price_car']."' 
-	             placeholder='id' />\n";
+	             value='".$row['price_car']."' />\n";
 	echo "<input name='price_jeep'  
-	             value='".$row['price_jeep']."'  
-	             placeholder='id' />\n";
+	             value='".$row['price_jeep']."' />\n";
 	echo "<input name='delete'
 				 value='Удалить'
 				 type='submit' />\n";

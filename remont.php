@@ -40,7 +40,7 @@ $result = $db->query('SELECT rowid, name_car, regnumber, phone, vin, years, mile
                       FROM kadri 
                       ORDER BY name');
     
-echo "<form action='edit_usl.php' method='post'>\n";
+echo "<form action='edit_rem.php' method='post'>\n";
 echo "<input name='id'     
              placeholder='№' />\n";
     
@@ -89,8 +89,7 @@ while ($row = $result->fetchArray())
 	             value='".$row['phone']."' />\n";
   
   echo "<input name='vin'  
-	             value='".$row['vin']."'  
-	             placeholder='id' />\n";
+	             value='".$row['vin']."' />\n";
   
   echo "<input name='years'  
 	             value='".$row['years']."' />\n"; 

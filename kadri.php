@@ -39,7 +39,7 @@ $db = new MyDB();
 $result = $db->query('SELECT rowid, name, position, phone
                       FROM kadri 
                       ORDER BY name');
-echo "<form action='edit_usl.php' method='post'>\n";
+echo "<form action='edit_kadr.php' method='post'>\n";
 echo "<input name='id'     
              placeholder='№' />\n";
 echo "<input name='name'   
@@ -54,7 +54,7 @@ echo "<input name='new'
 echo "</form>\n";
 while ($row = $result->fetchArray())
 {
-	echo "<form action='edit_usl.php' method='post'>\n";
+	echo "<form action='edit_kadr.php' method='post'>\n";
 	echo "<input name='id'     
 	             value='".$row['rowid']."' />\n";
 	echo "<input name='name'   

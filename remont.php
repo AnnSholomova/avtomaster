@@ -75,7 +75,7 @@ echo "<input name='new'
 echo "</form>\n";
 while ($row = $result->fetchArray())
 {
-	echo "<form action='edit_kadr.php' method='post'>\n";
+	echo "<form action='edit_rem.php' method='post'>\n";
 	echo "<input name='id'     
 	             value='".$row['rowid']."' />\n";
   

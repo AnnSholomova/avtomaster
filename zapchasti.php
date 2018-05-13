@@ -59,17 +59,13 @@ while ($row = $result->fetchArray())
 {
 	echo "<form action='edit_zch.php' method='post'>\n";
 	echo "<input name='id'     
-	             value='".$row['rowid']."'
-	             placeholder='id' />\n";
+	             value='".$row['rowid']."' />\n";
 	echo "<input name='name'   
-				 value='".$row['name']."'   
-				 placeholder='id' />\n";
+				 value='".$row['name']."' />\n";
 	echo "<input name='number' 
-	             value='".$row['number']."' 
-	             placeholder='id' />\n";
+	             value='".$row['number']."' />\n";
 	echo "<input name='price'  
-	             value='".$row['price']."'  
-	             placeholder='id' />\n";
+	             value='".$row['price']."' />\n";
 	echo "<input name='delete'
 				 value='Удалить'
 				 type='submit' />\n";

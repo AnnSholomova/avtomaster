@@ -1,5 +1,11 @@
 digraph G {
-
+  rankdir = LR
+  
+  "клиент" [shape=none size=1 image="actor.png"];
+  "администратор" [shape=none size=1 image="actor.png"];
+  "мастер" [shape=none size=1 image="actor.png"];
+  "механик" [shape=none size=1 image="actor.png"];
+  
   "клиент" -> "заказать работу";
   "клиент" -> "принять работу";
   "администратор" ->"заказать работу";

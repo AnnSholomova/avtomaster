@@ -55,6 +55,28 @@ $db->exec("insert into uslugi
 $result = $db->query('SELECT * FROM uslugi');
 var_dump($result->fetchArray());
 
+$result = $db->query('SELECT * FROM zapchasti');
+var_dump($result->fetchArray());
+
+
+$db->exec('drop table if exists kadri;');
+$db->exec('create table kadri 
+			(
+				name varchar, 
+				position varchar,
+				phone varchar
+			);');
+					
+$db->exec("insert into kadri 
+			(name, position, phone)
+			values
+			('Иванов Петр Львович', 'администратор', '+7 999 888 00 00');");
+
+
+$result = $db->query('SELECT * FROM kadri');
+var_dump($result->fetchArray());
+
+
 ?>
 
 
